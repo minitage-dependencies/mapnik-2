@@ -1,8 +1,8 @@
 Index: SConstruct
 ===================================================================
---- SConstruct	(révision 2615)
-+++ SConstruct	(copie de travail)
-@@ -627,6 +627,12 @@
+--- SConstruct	(revision 2688)
++++ SConstruct	(working copy)
+@@ -631,6 +631,13 @@
      # does not remove 'lib' and 'include'
      prefixes.insert(0,os.path.dirname(os.path.normpath(env['BOOST_INCLUDES'])))
      prefixes.insert(0,os.path.dirname(os.path.normpath(env['BOOST_LIBS'])))
@@ -12,10 +12,11 @@ Index: SConstruct
 +        fp = os.path.abspath(os.path.dirname(os.path.normpath(prefix)))
 +        if not fp in prefixes:
 +            prefixes.insert(0,fp) 
++
      for searchDir in prefixes:
          libItems = glob(os.path.join(searchDir, LIBDIR_SCHEMA, '%s*.*' % search_lib))
          if not libItems:
-@@ -876,14 +882,18 @@
+@@ -909,7 +916,12 @@
      env['LIBPATH'] = ['#src']
      
      # set any custom cxxflags to come first
@@ -26,13 +27,6 @@ Index: SConstruct
 +    # at build time, compilation directories take precedence over user custom cflags/ldflags
 +    if 'CUSTOM_LDFLAGS' in env:
 +        env.Append(LINKFLAGS = env['CUSTOM_LDFLAGS'])
-     
+ 
      # Solaris & Sun Studio settings (the `SUNCC` flag will only be
      # set if the `CXX` option begins with `CC`)
-     SOLARIS = env['PLATFORM'] == 'SunOS'
-     env['SUNCC'] = SOLARIS and env['CXX'].startswith('CC')
-     
--    
-     # If the Sun Studio C++ compiler (`CC`) is used instead of GCC.
-     if env['SUNCC']:
-         env['CC'] = 'cc'
