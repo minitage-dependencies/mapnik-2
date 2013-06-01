@@ -1,6 +1,6 @@
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/2.1.x.patch upstream/mapnik-mapnik-ef297c6/2.1.x.patch
---- v2.1.0/mapnik-mapnik-ef297c6/2.1.x.patch	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/2.1.x.patch	2013-06-01 19:43:08.037083442 +0200
+diff -Nur mapnik-mapnik-ef297c6/2.1.x.patch mapnik-v2.1.x/2.1.x.patch
+--- mapnik-mapnik-ef297c6/2.1.x.patch	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/2.1.x.patch	2013-06-01 19:43:08.037083442 +0200
 @@ -0,0 +1,2471 @@
 +diff --git a/CHANGELOG.md b/CHANGELOG.md
 +index a1a3e41..09a0f87 100644
@@ -2473,9 +2473,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/2.1.x.patch upstream/mapnik-mapnik-ef297c
 +     {'name': "simple-E"},
 +     {'name': "simple-NE"},
 +     {'name': "simple-NW"},
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py	2013-06-01 19:23:19.814004411 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py mapnik-v2.1.x/bindings/python/mapnik/__init__.py
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik/__init__.py	2013-06-01 19:23:19.814004411 +0200
 @@ -699,6 +699,18 @@
  
  class _TextSymbolizer(TextSymbolizer,_injector):
@@ -2495,9 +2495,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik/__init__.py upstre
      def text_size(self):
          warnings.warn("'text_size' is deprecated, use format.text_size",
          DeprecationWarning, 2)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp	2013-06-01 19:23:19.814004411 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp mapnik-v2.1.x/bindings/python/mapnik_fontset.cpp
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik_fontset.cpp	2013-06-01 19:23:19.814004411 +0200
 @@ -33,8 +33,13 @@
  void export_fontset ()
  {
@@ -2513,9 +2513,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_fontset.cpp upstre
          .def("add_face_name",&font_set::add_face_name,
               (arg("name")),
               "Add a face-name to the fontset.\n"
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp	2013-06-01 19:23:19.818004340 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp mapnik-v2.1.x/bindings/python/mapnik_markers_symbolizer.cpp
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik_markers_symbolizer.cpp	2013-06-01 19:23:19.818004340 +0200
 @@ -89,6 +89,12 @@
          .value("LINE_PLACEMENT",mapnik::MARKER_LINE_PLACEMENT)
          ;
@@ -2540,9 +2540,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_markers_symbolizer
          .add_property("comp_op",
                        &markers_symbolizer::comp_op,
                        &markers_symbolizer::set_comp_op,
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp	2013-06-01 19:23:19.818004340 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp mapnik-v2.1.x/bindings/python/mapnik_python.cpp
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik_python.cpp	2013-06-01 19:23:19.818004340 +0200
 @@ -295,6 +295,16 @@
      PyErr_SetString(PyExc_RuntimeError, ex.what());
  }
@@ -2577,9 +2577,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_python.cpp upstrea
      python_optional<mapnik::color>();
      python_optional<mapnik::box2d<double> >();
      python_optional<mapnik::composite_mode_e>();
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp	2013-06-01 19:23:19.818004340 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp mapnik-v2.1.x/bindings/python/mapnik_query.cpp
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik_query.cpp	2013-06-01 19:23:19.818004340 +0200
 @@ -22,11 +22,15 @@
  
  // boost
@@ -2627,9 +2627,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_query.cpp upstream
  
      class_<query>("Query", "a spatial query data object",
                    init<box2d<double>,query::resolution_type const&,double>() )
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp	2013-06-01 19:23:19.818004340 +0200
+diff -Nur mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp mapnik-v2.1.x/bindings/python/mapnik_text_placement.cpp
+--- mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/bindings/python/mapnik_text_placement.cpp	2013-06-01 19:23:19.818004340 +0200
 @@ -402,9 +402,9 @@
      class_with_converter<char_properties>
          ("CharProperties")
@@ -2641,9 +2641,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/bindings/python/mapnik_text_placement.cpp
          .def_readwrite("text_size", &char_properties::text_size)
          .def_readwrite("character_spacing", &char_properties::character_spacing)
          .def_readwrite("line_spacing", &char_properties::line_spacing)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/CHANGELOG.md upstream/mapnik-mapnik-ef297c6/CHANGELOG.md
---- v2.1.0/mapnik-mapnik-ef297c6/CHANGELOG.md	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/CHANGELOG.md	2013-06-01 19:23:19.810004482 +0200
+diff -Nur mapnik-mapnik-ef297c6/CHANGELOG.md mapnik-v2.1.x/CHANGELOG.md
+--- mapnik-mapnik-ef297c6/CHANGELOG.md	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/CHANGELOG.md	2013-06-01 19:23:19.810004482 +0200
 @@ -7,6 +7,17 @@
  For a complete change history, see the git log.
  
@@ -2662,9 +2662,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/CHANGELOG.md upstream/mapnik-mapnik-ef297
  ## Mapnik 2.1.0
  
  Released Aug 23, 2012
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h
---- v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h	2013-06-01 19:23:19.882003213 +0200
+diff -Nur mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h mapnik-v2.1.x/deps/agg/include/agg_conv_adaptor_vcgen.h
+--- mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/deps/agg/include/agg_conv_adaptor_vcgen.h	2013-06-01 19:23:19.882003213 +0200
 @@ -29,6 +29,7 @@
  
          void rewind(unsigned) {}
@@ -2681,9 +2681,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vcgen.h
  
      private:
          // Prohibit copying
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h
---- v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h	2013-06-01 19:23:19.882003213 +0200
+diff -Nur mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h mapnik-v2.1.x/deps/agg/include/agg_conv_adaptor_vpgen.h
+--- mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/deps/agg/include/agg_conv_adaptor_vpgen.h	2013-06-01 19:23:19.882003213 +0200
 @@ -33,6 +33,7 @@
  
          void rewind(unsigned path_id);
@@ -2692,9 +2692,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_adaptor_vpgen.h
  
      private:
          conv_adaptor_vpgen(const conv_adaptor_vpgen<VertexSource, VPGen>&);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h
---- v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h	2013-06-01 19:23:19.882003213 +0200
+diff -Nur mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h mapnik-v2.1.x/deps/agg/include/agg_conv_clip_polygon.h
+--- mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/deps/agg/include/agg_conv_clip_polygon.h	2013-06-01 19:23:19.882003213 +0200
 @@ -51,6 +51,7 @@
          double y1() const { return base_type::vpgen().y1(); }
          double x2() const { return base_type::vpgen().x2(); }
@@ -2703,9 +2703,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polygon.h 
  
      private:
          conv_clip_polygon(const conv_clip_polygon<VertexSource>&);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h
---- v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h	2013-06-01 19:23:19.882003213 +0200
+diff -Nur mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h mapnik-v2.1.x/deps/agg/include/agg_conv_clip_polyline.h
+--- mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/deps/agg/include/agg_conv_clip_polyline.h	2013-06-01 19:23:19.882003213 +0200
 @@ -51,6 +51,7 @@
          double y1() const { return base_type::vpgen().y1(); }
          double x2() const { return base_type::vpgen().x2(); }
@@ -2714,9 +2714,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_clip_polyline.h
  
      private:
          conv_clip_polyline(const conv_clip_polyline<VertexSource>&);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h
---- v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h	2013-06-01 19:23:19.882003213 +0200
+diff -Nur mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h mapnik-v2.1.x/deps/agg/include/agg_conv_smooth_poly1.h
+--- mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/deps/agg/include/agg_conv_smooth_poly1.h	2013-06-01 19:23:19.882003213 +0200
 @@ -42,6 +42,7 @@
  
          void   smooth_value(double v) { base_type::generator().smooth_value(v); }
@@ -2733,9 +2733,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/deps/agg/include/agg_conv_smooth_poly1.h 
  
      private:
          conv_smooth_poly1_curve(const conv_smooth_poly1_curve<VertexSource>&);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/fonts/build.py upstream/mapnik-mapnik-ef297c6/fonts/build.py
---- v2.1.0/mapnik-mapnik-ef297c6/fonts/build.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/fonts/build.py	2013-06-01 19:23:19.902002861 +0200
+diff -Nur mapnik-mapnik-ef297c6/fonts/build.py mapnik-v2.1.x/fonts/build.py
+--- mapnik-mapnik-ef297c6/fonts/build.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/fonts/build.py	2013-06-01 19:23:19.902002861 +0200
 @@ -22,15 +22,12 @@
  
  Import('env')
@@ -2762,9 +2762,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/fonts/build.py upstream/mapnik-mapnik-ef2
 +    if 'uninstall' not in COMMAND_LINE_TARGETS:
 +        env.Alias(target='install', source=env.Install(target_path, includes))
 +    env['create_uninstall_target'](env, target_path)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/config upstream/mapnik-mapnik-ef297c6/.git/config
---- v2.1.0/mapnik-mapnik-ef297c6/.git/config	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/config	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/config mapnik-v2.1.x/.git/config
+--- mapnik-mapnik-ef297c6/.git/config	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/config	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1,11 @@
 +[core]
 +	repositoryformatversion = 0
@@ -2777,19 +2777,19 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/config upstream/mapnik-mapnik-ef297c
 +[branch "2.1.x"]
 +	remote = origin
 +	merge = refs/heads/2.1.x
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/description upstream/mapnik-mapnik-ef297c6/.git/description
---- v2.1.0/mapnik-mapnik-ef297c6/.git/description	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/description	2013-06-01 19:19:31.950016957 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/description mapnik-v2.1.x/.git/description
+--- mapnik-mapnik-ef297c6/.git/description	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/description	2013-06-01 19:19:31.950016957 +0200
 @@ -0,0 +1 @@
 +Unnamed repository; edit this file 'description' to name the repository.
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/HEAD upstream/mapnik-mapnik-ef297c6/.git/HEAD
---- v2.1.0/mapnik-mapnik-ef297c6/.git/HEAD	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/HEAD	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/HEAD mapnik-v2.1.x/.git/HEAD
+--- mapnik-mapnik-ef297c6/.git/HEAD	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +ref: refs/heads/2.1.x
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample	2013-06-01 19:19:31.954016857 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample mapnik-v2.1.x/.git/hooks/applypatch-msg.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/applypatch-msg.sample	2013-06-01 19:19:31.954016857 +0200
 @@ -0,0 +1,15 @@
 +#!/bin/sh
 +#
@@ -2806,9 +2806,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/applypatch-msg.sample upstream
 +test -x "$GIT_DIR/hooks/commit-msg" &&
 +	exec "$GIT_DIR/hooks/commit-msg" ${1+"$@"}
 +:
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample	2013-06-01 19:19:31.958016776 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample mapnik-v2.1.x/.git/hooks/commit-msg.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/commit-msg.sample	2013-06-01 19:19:31.958016776 +0200
 @@ -0,0 +1,24 @@
 +#!/bin/sh
 +#
@@ -2834,9 +2834,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/commit-msg.sample upstream/map
 +	echo >&2 Duplicate Signed-off-by lines.
 +	exit 1
 +}
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/post-update.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/post-update.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/post-update.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/post-update.sample	2013-06-01 19:19:31.954016857 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/post-update.sample mapnik-v2.1.x/.git/hooks/post-update.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/post-update.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/post-update.sample	2013-06-01 19:19:31.954016857 +0200
 @@ -0,0 +1,8 @@
 +#!/bin/sh
 +#
@@ -2846,9 +2846,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/post-update.sample upstream/ma
 +# To enable this hook, rename this file to "post-update".
 +
 +exec git update-server-info
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample	2013-06-01 19:19:31.954016857 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample mapnik-v2.1.x/.git/hooks/pre-applypatch.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/pre-applypatch.sample	2013-06-01 19:19:31.954016857 +0200
 @@ -0,0 +1,14 @@
 +#!/bin/sh
 +#
@@ -2864,9 +2864,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-applypatch.sample upstream
 +test -x "$GIT_DIR/hooks/pre-commit" &&
 +	exec "$GIT_DIR/hooks/pre-commit" ${1+"$@"}
 +:
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample	2013-06-01 19:19:31.958016776 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample mapnik-v2.1.x/.git/hooks/pre-commit.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/pre-commit.sample	2013-06-01 19:19:31.958016776 +0200
 @@ -0,0 +1,50 @@
 +#!/bin/sh
 +#
@@ -2918,9 +2918,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-commit.sample upstream/map
 +
 +# If there are whitespace errors, print the offending file names and fail.
 +exec git diff-index --check --cached $against --
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample	2013-06-01 19:19:31.958016776 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample mapnik-v2.1.x/.git/hooks/prepare-commit-msg.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/prepare-commit-msg.sample	2013-06-01 19:19:31.958016776 +0200
 @@ -0,0 +1,36 @@
 +#!/bin/sh
 +#
@@ -2958,9 +2958,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/prepare-commit-msg.sample upst
 +
 +# SOB=$(git var GIT_AUTHOR_IDENT | sed -n 's/^\(.*>\).*$/Signed-off-by: \1/p')
 +# grep -qs "^$SOB" "$1" || echo "$SOB" >> "$1"
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample	2013-06-01 19:19:31.958016776 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample mapnik-v2.1.x/.git/hooks/pre-rebase.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/pre-rebase.sample	2013-06-01 19:19:31.958016776 +0200
 @@ -0,0 +1,169 @@
 +#!/bin/sh
 +#
@@ -3131,9 +3131,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/pre-rebase.sample upstream/map
 +	if this is empty, it is fully merged to "master".
 +
 +DOC_END
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/update.sample upstream/mapnik-mapnik-ef297c6/.git/hooks/update.sample
---- v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/update.sample	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/hooks/update.sample	2013-06-01 19:19:31.954016857 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/hooks/update.sample mapnik-v2.1.x/.git/hooks/update.sample
+--- mapnik-mapnik-ef297c6/.git/hooks/update.sample	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/hooks/update.sample	2013-06-01 19:19:31.954016857 +0200
 @@ -0,0 +1,128 @@
 +#!/bin/sh
 +#
@@ -3263,10 +3263,10 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/hooks/update.sample upstream/mapnik-
 +
 +# --- Finished
 +exit 0
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/.git/index et upstream/mapnik-mapnik-ef297c6/.git/index sont différents
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/info/exclude upstream/mapnik-mapnik-ef297c6/.git/info/exclude
---- v2.1.0/mapnik-mapnik-ef297c6/.git/info/exclude	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/info/exclude	2013-06-01 19:19:31.950016957 +0200
+Les fichiers binaires mapnik-mapnik-ef297c6/.git/index et mapnik-v2.1.x/.git/index sont différents
+diff -Nur mapnik-mapnik-ef297c6/.git/info/exclude mapnik-v2.1.x/.git/info/exclude
+--- mapnik-mapnik-ef297c6/.git/info/exclude	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/info/exclude	2013-06-01 19:19:31.950016957 +0200
 @@ -0,0 +1,6 @@
 +# git ls-files --others --exclude-from=.git/info/exclude
 +# Lines that start with '#' are comments.
@@ -3274,26 +3274,26 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/info/exclude upstream/mapnik-mapnik-
 +# exclude patterns (uncomment them if you want to use them):
 +# *.[oa]
 +# *~
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/logs/HEAD upstream/mapnik-mapnik-ef297c6/.git/logs/HEAD
---- v2.1.0/mapnik-mapnik-ef297c6/.git/logs/HEAD	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/logs/HEAD	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/logs/HEAD mapnik-v2.1.x/.git/logs/HEAD
+--- mapnik-mapnik-ef297c6/.git/logs/HEAD	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/logs/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x upstream/mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x
---- v2.1.0/mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x mapnik-v2.1.x/.git/logs/refs/heads/2.1.x
+--- mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/logs/refs/heads/2.1.x	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD upstream/mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD
---- v2.1.0/mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD mapnik-v2.1.x/.git/logs/refs/remotes/origin/HEAD
+--- mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/logs/refs/remotes/origin/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +0000000000000000000000000000000000000000 856ec4fd24128c61a0fc967b1cda6ab33a33db5c Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx et upstream/mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx sont différents
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack et upstream/mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack sont différents
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/packed-refs upstream/mapnik-mapnik-ef297c6/.git/packed-refs
---- v2.1.0/mapnik-mapnik-ef297c6/.git/packed-refs	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/packed-refs	2013-06-01 19:23:19.766005257 +0200
+Les fichiers binaires mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx et mapnik-v2.1.x/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx sont différents
+Les fichiers binaires mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack et mapnik-v2.1.x/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack sont différents
+diff -Nur mapnik-mapnik-ef297c6/.git/packed-refs mapnik-v2.1.x/.git/packed-refs
+--- mapnik-mapnik-ef297c6/.git/packed-refs	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/packed-refs	2013-06-01 19:23:19.766005257 +0200
 @@ -0,0 +1,81 @@
 +# pack-refs with: peeled 
 +8226b30f1f51b16749990473006c1f4ffd347d19 refs/remotes/origin/0.7.x
@@ -3376,19 +3376,19 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/packed-refs upstream/mapnik-mapnik-e
 +^3b831a485daeb9c6a440241d62e9cc5a8fb40dc0
 +91ad6fc18b9ea401d124c099602a182ceed71aa6 refs/tags/v2.1.0
 +^ef297c626358a3acced74cbdf9dcaefb3bbbc5cc
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x upstream/mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x
---- v2.1.0/mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x mapnik-v2.1.x/.git/refs/heads/2.1.x
+--- mapnik-mapnik-ef297c6/.git/refs/heads/2.1.x	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/refs/heads/2.1.x	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +3e70226a69e32e2282e405b61d0d679fd96370aa
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD upstream/mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD
---- v2.1.0/mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD	2013-06-01 19:23:19.802004623 +0200
+diff -Nur mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD mapnik-v2.1.x/.git/refs/remotes/origin/HEAD
+--- mapnik-mapnik-ef297c6/.git/refs/remotes/origin/HEAD	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/.git/refs/remotes/origin/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
 +ref: refs/remotes/origin/master
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp	2013-06-01 19:23:20.105999268 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp mapnik-v2.1.x/include/mapnik/ctrans.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/ctrans.hpp	2013-06-01 19:23:20.105999268 +0200
 @@ -81,6 +81,11 @@
          geom_.rewind(pos);
      }
@@ -3401,9 +3401,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/ctrans.hpp upstream/mapnik
      Geometry const& geom() const
      {
          return geom_;
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp	2013-06-01 19:23:20.109999198 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp mapnik-v2.1.x/include/mapnik/font_engine_freetype.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/font_engine_freetype.hpp	2013-06-01 19:23:20.109999198 +0200
 @@ -333,11 +333,11 @@
          return face_set;
      }
@@ -3419,9 +3419,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_engine_freetype.hpp u
          }
          else
          {
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp	2013-06-01 19:23:20.109999198 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp mapnik-v2.1.x/include/mapnik/font_set.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/font_set.hpp	2013-06-01 19:23:20.109999198 +0200
 @@ -35,11 +35,11 @@
  class MAPNIK_DECL font_set
  {
@@ -3435,9 +3435,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/font_set.hpp upstream/mapn
      std::string const& get_name() const;
      void add_face_name(std::string);
      std::vector<std::string> const& get_face_names() const;
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp	2013-06-01 19:23:20.109999198 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp mapnik-v2.1.x/include/mapnik/geom_util.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/geom_util.hpp	2013-06-01 19:23:20.109999198 +0200
 @@ -329,6 +329,73 @@
      return true;
  }
@@ -3512,9 +3512,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/geom_util.hpp upstream/map
  template <typename PathType>
  bool hit_test(PathType & path, double x, double y, double tol)
  {
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp	2013-06-01 19:23:20.113999127 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp mapnik-v2.1.x/include/mapnik/grid/grid_marker_helpers.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/grid/grid_marker_helpers.hpp	2013-06-01 19:23:20.113999127 +0200
 @@ -78,11 +78,17 @@
      {
          marker_placement_e placement_method = sym_.get_marker_placement();
@@ -3555,9 +3555,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/grid/grid_marker_helpers.h
              {
                  if (!label::interior_position(path, x, y))
                      return;
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp	2013-06-01 19:23:20.113999127 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp mapnik-v2.1.x/include/mapnik/image_filter_types.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/image_filter_types.hpp	2013-06-01 19:23:20.113999127 +0200
 @@ -75,7 +75,7 @@
  
  inline std::ostream& operator<< (std::ostream& os, agg_stack_blur const& filter)
@@ -3567,9 +3567,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/image_filter_types.hpp ups
      return os;
  }
  
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp	2013-06-01 19:23:20.113999127 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp mapnik-v2.1.x/include/mapnik/json/feature_collection_grammar.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_grammar.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/json/feature_collection_grammar.hpp	2013-06-01 19:23:20.113999127 +0200
 @@ -91,7 +91,7 @@
              > lit(']')
              ;
@@ -3579,9 +3579,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/json/feature_collection_gr
              >> feature_g(*_a)[push_back(_r1,_a)]
              ;
          
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp	2013-06-01 19:23:20.117999057 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp mapnik-v2.1.x/include/mapnik/marker_helpers.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/marker_helpers.hpp	2013-06-01 19:23:20.117999057 +0200
 @@ -87,11 +87,17 @@
      {
          marker_placement_e placement_method = sym_.get_marker_placement();
@@ -3691,9 +3691,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/marker_helpers.hpp upstrea
  }
  
  #endif //MAPNIK_MARKER_HELPERS_HPP
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp	2013-06-01 19:23:20.117999057 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp mapnik-v2.1.x/include/mapnik/markers_symbolizer.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/markers_symbolizer.hpp	2013-06-01 19:23:20.117999057 +0200
 @@ -46,6 +46,15 @@
  
  DEFINE_ENUM( marker_placement_e, marker_placement_enum );
@@ -3727,9 +3727,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/markers_symbolizer.hpp ups
  };
  
  }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp	2013-06-01 19:23:20.121998987 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp mapnik-v2.1.x/include/mapnik/stroke.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/stroke.hpp	2013-06-01 19:23:20.121998987 +0200
 @@ -33,9 +33,7 @@
  
  namespace mapnik
@@ -3741,9 +3741,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/stroke.hpp upstream/mapnik
  
  // if you add new tokens, don't forget to add them to the corresponding
  // string array in the cpp file.
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp	2013-06-01 19:23:20.121998987 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp mapnik-v2.1.x/include/mapnik/text_properties.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/text_properties.hpp	2013-06-01 19:23:20.121998987 +0200
 @@ -33,6 +33,7 @@
  #include <map>
  
@@ -3761,9 +3761,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_properties.hpp upstre
      float text_size;
      double character_spacing;
      double line_spacing; //Largest total height (fontsize+line_spacing) per line is chosen
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp	2013-06-01 19:23:20.121998987 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp mapnik-v2.1.x/include/mapnik/text_symbolizer.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/text_symbolizer.hpp	2013-06-01 19:23:20.121998987 +0200
 @@ -92,7 +92,7 @@
      void set_text_size(float size);
      std::string const& get_face_name() const func_deprecated;
@@ -3773,9 +3773,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/text_symbolizer.hpp upstre
      void set_fontset(font_set const& fset);
      color const& get_fill() const func_deprecated;
      void set_fill(color const& fill);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp	2013-06-01 19:23:20.125998916 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp mapnik-v2.1.x/include/mapnik/util/conversions.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/util/conversions.hpp	2013-06-01 19:23:20.125998916 +0200
 @@ -38,6 +38,7 @@
  #if BOOST_VERSION >= 104500
  #include <boost/config/warning_disable.hpp>
@@ -3876,9 +3876,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/util/conversions.hpp upstr
      std::back_insert_iterator<std::string> sink(str);
      return karma::generate(sink, double_type(), value);
  }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/version.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/version.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/version.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/version.hpp	2013-06-01 19:23:20.125998916 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/version.hpp mapnik-v2.1.x/include/mapnik/version.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/version.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/version.hpp	2013-06-01 19:23:20.125998916 +0200
 @@ -23,13 +23,13 @@
  #ifndef MAPNIK_VERSION_HPP
  #define MAPNIK_VERSION_HPP
@@ -3896,9 +3896,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/version.hpp upstream/mapni
  #define MAPNIK_VERSION (MAPNIK_MAJOR_VERSION*100000) + (MAPNIK_MINOR_VERSION*100) + (MAPNIK_PATCH_VERSION)
  
  #ifndef MAPNIK_STRINGIFY
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp upstream/mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp	2013-06-01 19:23:20.125998916 +0200
+diff -Nur mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp mapnik-v2.1.x/include/mapnik/vertex_converters.hpp
+--- mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/include/mapnik/vertex_converters.hpp	2013-06-01 19:23:20.125998916 +0200
 @@ -347,6 +347,16 @@
              disp_.vec_[index]=1;
      }
@@ -3916,9 +3916,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/include/mapnik/vertex_converters.hpp upst
  
      detail::dispatcher<args_type,conv_types> disp_;
  };
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/Makefile upstream/mapnik-mapnik-ef297c6/Makefile
---- v2.1.0/mapnik-mapnik-ef297c6/Makefile	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/Makefile	2013-06-01 19:23:19.814004411 +0200
+diff -Nur mapnik-mapnik-ef297c6/Makefile mapnik-v2.1.x/Makefile
+--- mapnik-mapnik-ef297c6/Makefile	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/Makefile	2013-06-01 19:23:19.814004411 +0200
 @@ -25,7 +25,7 @@
  	@python tests/visual_tests/test.py -q || true
  	@echo "*** Running C++ tests..."
@@ -3928,9 +3928,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/Makefile upstream/mapnik-mapnik-ef297c6/M
  	done
  	@echo "*** Running python tests..."
  	@python tests/run_tests.py -q
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp mapnik-v2.1.x/plugins/input/postgis/connection.hpp
+--- mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/postgis/connection.hpp	2013-06-01 19:23:20.157998352 +0200
 @@ -53,7 +53,7 @@
          {
              std::ostringstream s;
@@ -3964,9 +3964,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/connection.hpp upst
      }
  
      void close()
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp mapnik-v2.1.x/plugins/input/postgis/postgis_datasource.cpp
+--- mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/postgis/postgis_datasource.cpp	2013-06-01 19:23:20.157998352 +0200
 @@ -127,11 +127,12 @@
      if (pool)
      {
@@ -4074,9 +4074,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_datasource.
              std::ostringstream s;
              std::string g_type;
  
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp mapnik-v2.1.x/plugins/input/postgis/postgis_featureset.cpp
+--- mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/postgis/postgis_featureset.cpp	2013-06-01 19:23:20.157998352 +0200
 @@ -174,6 +174,7 @@
  
                      case 25:   //text
@@ -4085,9 +4085,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/postgis/postgis_featureset.
                      {
                          feature->put(name, tr_->transcode(buf));
                          break;
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/build.py upstream/mapnik-mapnik-ef297c6/plugins/input/python/build.py
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/build.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/python/build.py	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/python/build.py mapnik-v2.1.x/plugins/input/python/build.py
+--- mapnik-mapnik-ef297c6/plugins/input/python/build.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/python/build.py	2013-06-01 19:23:20.157998352 +0200
 @@ -14,7 +14,8 @@
  plugin_sources = Split(
    """
@@ -4124,9 +4124,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/build.py upstream/ma
  
  if env['CUSTOM_LDFLAGS']:
      linkflags = '%s %s' % (env['CUSTOM_LDFLAGS'], python_link_flag)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp mapnik-v2.1.x/plugins/input/python/python_datasource.cpp
+--- mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/python/python_datasource.cpp	2013-06-01 19:23:20.157998352 +0200
 @@ -62,147 +62,170 @@
  void python_datasource::bind() const
  {
@@ -4383,9 +4383,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_datasource.cp
 -}
 +}
 \ Pas de fin de ligne à la fin du fichier
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp mapnik-v2.1.x/plugins/input/python/python_utils.cpp
+--- mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/plugins/input/python/python_utils.cpp	2013-06-01 19:23:20.157998352 +0200
 @@ -0,0 +1,23 @@
 +#include "python_utils.hpp"
 +
@@ -4410,9 +4410,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.cpp ups
 +    return extract<std::string>(formatted);
 +  }
 +}
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp
---- v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp	2013-06-01 19:23:20.157998352 +0200
+diff -Nur mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp mapnik-v2.1.x/plugins/input/python/python_utils.hpp
+--- mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/plugins/input/python/python_utils.hpp	2013-06-01 19:23:20.157998352 +0200
 @@ -13,4 +13,6 @@
          PyGILState_STATE gil_state_;
  };
@@ -4420,9 +4420,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/plugins/input/python/python_utils.hpp ups
 +std::string extractException();
 +
  #endif // PYTHON_UTILS_HPP
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/SConstruct upstream/mapnik-mapnik-ef297c6/SConstruct
---- v2.1.0/mapnik-mapnik-ef297c6/SConstruct	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/SConstruct	2013-06-01 19:23:19.814004411 +0200
+diff -Nur mapnik-mapnik-ef297c6/SConstruct mapnik-v2.1.x/SConstruct
+--- mapnik-mapnik-ef297c6/SConstruct	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/SConstruct	2013-06-01 19:23:19.814004411 +0200
 @@ -350,7 +350,7 @@
  
      # Other variables
@@ -4484,9 +4484,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/SConstruct upstream/mapnik-mapnik-ef297c6
  
              if not conf.CheckHeader(header='Python.h',language='C'):
                  color_print(1,'Could not find required header files for the Python language (version %s)' % env['PYTHON_VERSION'])
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp upstream/mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp	2013-06-01 19:23:20.193997719 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp mapnik-v2.1.x/src/agg/process_markers_symbolizer.cpp
+--- mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/agg/process_markers_symbolizer.cpp	2013-06-01 19:23:20.193997719 +0200
 @@ -26,6 +26,7 @@
  #include <mapnik/agg_rasterizer.hpp>
  
@@ -4532,9 +4532,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/agg/process_markers_symbolizer.cpp up
              }
          }
      }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/cairo_renderer.cpp upstream/mapnik-mapnik-ef297c6/src/cairo_renderer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/cairo_renderer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/cairo_renderer.cpp	2013-06-01 19:23:20.193997719 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/cairo_renderer.cpp mapnik-v2.1.x/src/cairo_renderer.cpp
+--- mapnik-mapnik-ef297c6/src/cairo_renderer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/cairo_renderer.cpp	2013-06-01 19:23:20.193997719 +0200
 @@ -1494,11 +1494,17 @@
      {
          marker_placement_e placement_method = sym_.get_marker_placement();
@@ -4611,9 +4611,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/cairo_renderer.cpp upstream/mapnik-ma
                  }
              }
          }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/debug.cpp upstream/mapnik-mapnik-ef297c6/src/debug.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/debug.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/debug.cpp	2013-06-01 19:23:20.193997719 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/debug.cpp mapnik-v2.1.x/src/debug.cpp
+--- mapnik-mapnik-ef297c6/src/debug.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/debug.cpp	2013-06-01 19:23:20.193997719 +0200
 @@ -60,14 +60,10 @@
      #if MAPNIK_DEFAULT_LOG_SEVERITY == 0
          logger::debug
@@ -4631,9 +4631,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/debug.cpp upstream/mapnik-mapnik-ef29
          logger::none
      #else
          #error "Wrong default log severity level specified!"
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/font_set.cpp upstream/mapnik-mapnik-ef297c6/src/font_set.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/font_set.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/font_set.cpp	2013-06-01 19:23:20.197997648 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/font_set.cpp mapnik-v2.1.x/src/font_set.cpp
+--- mapnik-mapnik-ef297c6/src/font_set.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/font_set.cpp	2013-06-01 19:23:20.197997648 +0200
 @@ -29,8 +29,6 @@
  
  namespace mapnik
@@ -4655,9 +4655,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/font_set.cpp upstream/mapnik-mapnik-e
  std::string const& font_set::get_name() const
  {
      return name_;
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp upstream/mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp	2013-06-01 19:23:20.197997648 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp mapnik-v2.1.x/src/grid/process_markers_symbolizer.cpp
+--- mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/grid/process_markers_symbolizer.cpp	2013-06-01 19:23:20.197997648 +0200
 @@ -163,10 +163,7 @@
                      }
                      converter.template set<transform_tag>(); //always transform
@@ -4694,9 +4694,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/grid/process_markers_symbolizer.cpp u
              }
          }
      }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp upstream/mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp	2013-06-01 19:23:20.201997578 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp mapnik-v2.1.x/src/json/feature_collection_parser.cpp
+--- mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/json/feature_collection_parser.cpp	2013-06-01 19:23:20.201997578 +0200
 @@ -20,12 +20,17 @@
   *
   *****************************************************************************/
@@ -4716,9 +4716,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/json/feature_collection_parser.cpp up
  #include <boost/spirit/include/qi.hpp>
  #include <boost/spirit/include/support_multi_pass.hpp>
  
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/load_map.cpp upstream/mapnik-mapnik-ef297c6/src/load_map.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/load_map.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/load_map.cpp	2013-06-01 19:23:20.201997578 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/load_map.cpp mapnik-v2.1.x/src/load_map.cpp
+--- mapnik-mapnik-ef297c6/src/load_map.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/load_map.cpp	2013-06-01 19:23:20.201997578 +0200
 @@ -514,7 +514,7 @@
  
          // XXX Hack because map object isn't accessible by text_symbolizer
@@ -4757,9 +4757,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/load_map.cpp upstream/mapnik-mapnik-e
          {
              ensure_font_face(placement_finder->defaults.format.face_name);
          }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/map.cpp upstream/mapnik-mapnik-ef297c6/src/map.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/map.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/map.cpp	2013-06-01 19:23:20.201997578 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/map.cpp mapnik-v2.1.x/src/map.cpp
+--- mapnik-mapnik-ef297c6/src/map.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/map.cpp	2013-06-01 19:23:20.201997578 +0200
 @@ -159,6 +159,10 @@
  
  bool Map::insert_fontset(std::string const& name, font_set const& fontset)
@@ -4771,9 +4771,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/map.cpp upstream/mapnik-mapnik-ef297c
      return fontsets_.insert(make_pair(name, fontset)).second;
  }
  
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp upstream/mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp	2013-06-01 19:23:20.201997578 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp mapnik-v2.1.x/src/markers_symbolizer.cpp
+--- mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/markers_symbolizer.cpp	2013-06-01 19:23:20.201997578 +0200
 @@ -37,6 +37,15 @@
  
  IMPLEMENT_ENUM( marker_placement_e, marker_placement_strings )
@@ -4839,9 +4839,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/markers_symbolizer.cpp upstream/mapni
 +}
 +
  }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/processed_text.cpp upstream/mapnik-mapnik-ef297c6/src/processed_text.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/processed_text.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/processed_text.cpp	2013-06-01 19:23:20.205997507 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/processed_text.cpp mapnik-v2.1.x/src/processed_text.cpp
+--- mapnik-mapnik-ef297c6/src/processed_text.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/processed_text.cpp	2013-06-01 19:23:20.205997507 +0200
 @@ -65,22 +65,22 @@
          face_set_ptr faces = font_manager_.get_face_set(p.face_name, p.fontset);
          if (faces->size() == 0)
@@ -4870,9 +4870,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/processed_text.cpp upstream/mapnik-ma
                  }
              }
              else if (!p.face_name.empty())
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/save_map.cpp upstream/mapnik-mapnik-ef297c6/src/save_map.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/save_map.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/save_map.cpp	2013-06-01 19:23:20.205997507 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/save_map.cpp mapnik-v2.1.x/src/save_map.cpp
+--- mapnik-mapnik-ef297c6/src/save_map.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/save_map.cpp	2013-06-01 19:23:20.205997507 +0200
 @@ -98,6 +98,10 @@
          {
              set_attr( sym_node, "rasterizer", sym.get_rasterizer() );
@@ -4895,9 +4895,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/save_map.cpp upstream/mapnik-mapnik-e
          if (sym.get_image_transform())
          {
              std::string tr_str = sym.get_image_transform_string();
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/text_properties.cpp upstream/mapnik-mapnik-ef297c6/src/text_properties.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/text_properties.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/text_properties.cpp	2013-06-01 19:23:20.209997437 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/text_properties.cpp mapnik-v2.1.x/src/text_properties.cpp
+--- mapnik-mapnik-ef297c6/src/text_properties.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/text_properties.cpp	2013-06-01 19:23:20.209997437 +0200
 @@ -293,11 +293,11 @@
              throw config_error("Unable to find any fontset named '" + *fontset_name_ + "'", sym);
          }
@@ -4926,9 +4926,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/text_properties.cpp upstream/mapnik-m
      }
  
      if (face_name != dfl.face_name || explicit_defaults)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/text_symbolizer.cpp upstream/mapnik-mapnik-ef297c6/src/text_symbolizer.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/text_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/text_symbolizer.cpp	2013-06-01 19:23:20.209997437 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/text_symbolizer.cpp mapnik-v2.1.x/src/text_symbolizer.cpp
+--- mapnik-mapnik-ef297c6/src/text_symbolizer.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/text_symbolizer.cpp	2013-06-01 19:23:20.209997437 +0200
 @@ -173,7 +173,7 @@
      placement_options_->defaults.format.fontset = fontset;
  }
@@ -4938,9 +4938,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/text_symbolizer.cpp upstream/mapnik-m
  {
      return placement_options_->defaults.format.fontset;
  }
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/xml_tree.cpp upstream/mapnik-mapnik-ef297c6/src/xml_tree.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/src/xml_tree.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/src/xml_tree.cpp	2013-06-01 19:23:20.209997437 +0200
+diff -Nur mapnik-mapnik-ef297c6/src/xml_tree.cpp mapnik-v2.1.x/src/xml_tree.cpp
+--- mapnik-mapnik-ef297c6/src/xml_tree.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/src/xml_tree.cpp	2013-06-01 19:23:20.209997437 +0200
 @@ -486,6 +486,7 @@
  compile_get_attr(filter_mode_e);
  compile_get_attr(point_placement_e);
@@ -4949,9 +4949,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/src/xml_tree.cpp upstream/mapnik-mapnik-e
  compile_get_attr(pattern_alignment_e);
  compile_get_attr(line_rasterizer_e);
  compile_get_attr(colorizer_mode);
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp upstream/mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp	2013-06-01 19:23:20.209997437 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp mapnik-v2.1.x/tests/cpp_tests/conversions_test.cpp
+--- mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/cpp_tests/conversions_test.cpp	2013-06-01 19:23:20.209997437 +0200
 @@ -0,0 +1,133 @@
 +#include <boost/version.hpp>
 +#include <mapnik/util/conversions.hpp>
@@ -5086,9 +5086,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/conversions_test.cpp upst
 +        return ::boost::report_errors();
 +    }
 +}
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp upstream/mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp
---- v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp	2013-06-01 19:23:20.209997437 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp mapnik-v2.1.x/tests/cpp_tests/label_algo_test.cpp
+--- mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/cpp_tests/label_algo_test.cpp	2013-06-01 19:23:20.209997437 +0200
 @@ -31,6 +31,9 @@
      BOOST_TEST( x == 25 );
      BOOST_TEST( y == 25 );
@@ -5099,9 +5099,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/cpp_tests/label_algo_test.cpp upstr
      if (!::boost::detail::test_errors()) {
          std::clog << "C++ label algorithms: \x1b[1;32m✓ \x1b[0m\n";
  #if BOOST_VERSION >= 104600
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py upstream/mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py	2013-06-01 19:23:20.393994196 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py mapnik-v2.1.x/tests/python_tests/filter_test.py
+--- mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/python_tests/filter_test.py	2013-06-01 19:23:20.393994196 +0200
 @@ -20,9 +20,9 @@
  
              <![CDATA[
@@ -5155,9 +5155,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/filter_test.py upstrea
      eq_(expr.evaluate(f),True)
  
  def test_string_matching_on_precision():
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py upstream/mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py	2013-06-01 19:23:20.397994126 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py mapnik-v2.1.x/tests/python_tests/geometry_io_test.py
+--- mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/python_tests/geometry_io_test.py	2013-06-01 19:23:20.397994126 +0200
 @@ -14,7 +14,7 @@
  
  wkts = [
@@ -5176,9 +5176,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/geometry_io_test.py up
  [1,'{"type":"Point","coordinates":[30.0,10.0]}'],
  [1,'{"type":"Point","coordinates":[30.1,10.1]}'],
  [1,'{"type":"LineString","coordinates":[[30.0,10.0],[10.0,30.0],[40.0,40.0]]}'],
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/object_test.py upstream/mapnik-mapnik-ef297c6/tests/python_tests/object_test.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/object_test.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/python_tests/object_test.py	2013-06-01 19:23:20.405993985 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/python_tests/object_test.py mapnik-v2.1.x/tests/python_tests/object_test.py
+--- mapnik-mapnik-ef297c6/tests/python_tests/object_test.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/python_tests/object_test.py	2013-06-01 19:23:20.405993985 +0200
 @@ -97,7 +97,7 @@
  
      # old args required method
@@ -5252,9 +5252,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/object_test.py upstrea
  
      #https://github.com/mapnik/mapnik/issues/1285
      #https://github.com/mapnik/mapnik/issues/1427
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/query_test.py upstream/mapnik-mapnik-ef297c6/tests/python_tests/query_test.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/query_test.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/python_tests/query_test.py	2013-06-01 19:23:20.405993985 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/python_tests/query_test.py mapnik-v2.1.x/tests/python_tests/query_test.py
+--- mapnik-mapnik-ef297c6/tests/python_tests/query_test.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/python_tests/query_test.py	2013-06-01 19:23:20.405993985 +0200
 @@ -17,6 +17,10 @@
      r = query.resolution
      assert_almost_equal(r[0], 1.0, places=7)
@@ -5266,9 +5266,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/query_test.py upstream
  
  # Converting *from* tuples *to* resolutions is not yet supported
  @raises(TypeError)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py upstream/mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py	2013-06-01 19:23:20.405993985 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py mapnik-v2.1.x/tests/python_tests/test_fontset.py
+--- mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/python_tests/test_fontset.py	2013-06-01 19:23:20.405993985 +0200
 @@ -17,6 +17,25 @@
      eq_(len(fs.names),2)
      eq_(list(fs.names),['DejaVu Sans Book','DejaVu Sans Oblique'])
@@ -5295,9 +5295,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/python_tests/test_fontset.py upstre
  
  if __name__ == "__main__":
      setup()
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/run_tests.py upstream/mapnik-mapnik-ef297c6/tests/run_tests.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/run_tests.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/run_tests.py	2013-06-01 19:23:20.405993985 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/run_tests.py mapnik-v2.1.x/tests/run_tests.py
+--- mapnik-mapnik-ef297c6/tests/run_tests.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/run_tests.py	2013-06-01 19:23:20.405993985 +0200
 @@ -5,7 +5,7 @@
  try:
      import nose
@@ -5307,33 +5307,33 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/run_tests.py upstream/mapnik-mapnik
      sys.exit(1)
      
  from python_tests.utilities import TodoPlugin
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv	2013-06-01 19:23:20.409993914 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv mapnik-v2.1.x/tests/visual_tests/data/marker-multi-policy.csv
+--- mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-multi-policy.csv	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/data/marker-multi-policy.csv	2013-06-01 19:23:20.409993914 +0200
 @@ -0,0 +1,3 @@
 +i|wkt
 +1|MULTIPOLYGON(((90 40,50 0,10 40,50 80,90 40)),((190 40,150 0,110 40,150 80,190 40)),((190 140,150 100,110 140,150 180,190 140)))
 +2|MULTIPOLYGON(((48 130,40 122,32 130,40 138,48 130)),((40 140,20 120,0 140,20 160,40 140)),((48 150,40 142,32 150,40 158,48 150)))
 \ Pas de fin de ligne à la fin du fichier
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv	2013-06-01 19:23:20.409993914 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv mapnik-v2.1.x/tests/visual_tests/data/marker-on-line.csv
+--- mapnik-mapnik-ef297c6/tests/visual_tests/data/marker-on-line.csv	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/data/marker-on-line.csv	2013-06-01 19:23:20.409993914 +0200
 @@ -0,0 +1,2 @@
 +i|wkt
 +1|LINESTRING(-10  0, 0 20, 10 0, 15 5)
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv	2013-06-01 19:23:20.409993914 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv mapnik-v2.1.x/tests/visual_tests/data/whole-centroid.csv
+--- mapnik-mapnik-ef297c6/tests/visual_tests/data/whole-centroid.csv	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/data/whole-centroid.csv	2013-06-01 19:23:20.409993914 +0200
 @@ -0,0 +1,2 @@
 +i|wkt
 +1|MULTIPOLYGON(((1350057.96009438 5942345.52058283,1384876.13646624 5891754.2133652,1527153.68896859 5865144.36766544,1489794.86785838 5828107.21457916,1521644.71000822 5808839.16705438,1500586.73589334 5782129.46376012,1549474.58270654 5722446.94649062,1526963.22131985 5715859.64352432,1468675.11142609 5744853.11521536,1367157.74707515 5695509.5055605,1353768.57268098 5663160.88833932,1395853.46277285 5615400.34143299,1363168.83576153 5576894.81504537,1376836.42020216 5503694.0028362,1516356.92287605 5396662.575031,1560328.12173938 5261876.31080913,1640818.23615492 5173802.74601002,1796912.65253506 5148129.98779792,1773597.67574436 5083111.70893878,2005049.37613903 4960037.26198969,2060770.68121407 4885821.98463312,2042650.53978071 4835753.32622244,1988073.15379307 4907241.27057499,1882814.34135654 4930901.063827,1835287.04135981 4832212.44229475,1909252.60910046 4777690.54700568,1911262.92778469 4716420.6995481,1847346.61575592 4693181.77244718,1788068.875589 4568718.26175616,1740109.09937055 4581073.81722757,1805880.43939388 4708906.48580766,1744005.2815483 4870423.42300908,1235522.56053157 5220039.63151647,1125161.53055404 5466602.89896275,973921.757167397 5532097.82173426,838019.24926376 5432786.3871293,852954.651385017 5491916.6901273,776607.959736312 5509523.04321204,782761.478548388 5595015.13624148,736908.312373676 5638877.1573602,793460.506128018 5662194.42680345,756857.878318762 5745270.82868898,783472.587455564 5769448.93739922,874497.199243332 5767386.72200479,939134.416294499 5854912.10535634,1005956.9462694 5754390.71173147,1033261.27965169 5860165.00562569,1127666.33041638 5816836.29071798,1118791.82929085 5867309.80784728,1164989.30665057 5868344.65660203,1165652.54817671 5921100.82966656,1350057.96009438 5942345.52058283),(1386948.01482887 5449379.17151171,1392606.60718488 5463421.03119553,1382120.31115215 5458937.77184712,1386948.01482887 5449379.17151171),(1385381.11851082 5146477.94829492,1386669.06721543 5146224.9584086,1386111.70929647 5147206.59661607,1385381.11851082 5146477.94829492)),((1382897.20987839 5687974.04417046,1371857.98993491 5675822.90372079,1377393.1289756 5689163.60754804,1382897.20987839 5687974.04417046)),((1095847.54640445 5317215.2838641,1091704.01231816 5313451.44710224,1091394.65545324 5321701.46563701,1094455.94145006 5323479.01597989,1095847.54640445 5317215.2838641)),((1162299.15983606 5288324.53042776,1160289.06379081 5267765.62824438,1124543.26210218 5277407.73480368,1162299.15983606 5288324.53042776)),((1123028.09251298 5247084.38946664,1122316.87228631 5254141.60947014,1124512.20396424 5250317.54284925,1123028.09251298 5247084.38946664)),((1215144.97114443 5209828.83212963,1209640.77892215 5214848.8689761,1210908.5966028 5219286.46510058,1215144.97114443 5209828.83212963)),((1148446.00580429 5208658.24432317,1145817.64130717 5213552.48912728,1149497.41839483 5212548.16532901,1148446.00580429 5208658.24432317)),((1059019.27398736 5033998.10699295,1093806.61486026 4942691.99568292,1065234.68643633 4743259.71214946,1003916.12604469 4759901.51823648,986197.736653606 4704377.88889769,935856.725207561 4715744.68629496,952523.590688621 4846503.91226084,911984.817004403 4999606.76073705,1059019.27398736 5033998.10699295)),((928311.824080081 5021563.59386512,914520.452365687 5011234.44611049,926301.728034833 5030262.29618597,928311.824080081 5021563.59386512)),((1443164.46899898 4995230.22633471,1441618.24127186 5000220.31310592,1445823.55767554 5002226.81825718,1443164.46899898 4995230.22633471)),((1553061.29669992 4968395.29665014,1542207.75766705 4973291.02362767,1552690.38015659 4974433.31609162,1553061.29669992 4968395.29665014)),((1581911.63517033 4947738.11891254, 1587632.34380218 4947004.77788114,1580427.52371907 4944237.33055168,1581911.63517033 4947738.11891254)),((923085.819265294 4735088.56864719,915479.024500905 4745293.69583645,924260.796490606 4748923.38178062,923085.819265294 4735088.56864719)),((1693571.31832746 4688858.4894456,1690973.90064878 4691713.90965507,1696416.19923417 4693935.9965921,1693571.31832746 4688858.4894456)),((1466448.61029075 4677403.01590106,1465211.85074803 4680849.56314581,1469231.59756058 4680414.29421003,1466448.61029075 4677403.01590106)),((1655135.14718535 4654767.34922581,1646940.91946804 4659946.37928978,1655166.09400377 4661409.67928983,1655135.14718535 4654767.34922581)),((1664813.70899286 4642559.56041499,1660020.95963625 4652672.28390196,1665772.39244759 4652790.51476716,1664813.70899286 4642559.56041499)),((1668555.37971741 4630998.75869634,1663236.86840579 4636007.55629286,1665215.68367412 4640507.06235257,1668555.37971741 4630998.75869634)),((1728668.01606527 4598788.94471507,1679439.97688818 4506146.77040914,1705043.45977066 4440345.73224938,1678852.4326158 4390316.66779138,1382835.42756099 4550662.053593,1482404.47818411 4610314.59733156,1532745.60094962 4575266.49172867,1728668.01606527 4598788.94471507)),((1344059.17537453 4572873.96816367,1339173.36292359 4577580.75464391,1342420.21851156 4577895.44505675,1344059.17537453 4572873.96816367)),((1375259.46829558 4566170.07673534,1366044.55216722 4570443.18173048,1373589.78725316 4570168.66006012,1375259.46829558 4566170.07673534)),((1337596.41101701 4402695.43852239,1328134.14298011 4415398.45409661,1341214.18314831 4410841.06668909,1337596.41101701 4402695.43852239)))
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker_line_placement_on_points-500-reference.png et upstream/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker_line_placement_on_points-500-reference.png sont différents
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-multi-policy-600-reference.png et upstream/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-multi-policy-600-reference.png sont différents
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-on-line-600-reference.png et upstream/mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-on-line-600-reference.png sont différents
-Les fichiers binaires v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/images/whole-centroid-600-reference.png et upstream/mapnik-mapnik-ef297c6/tests/visual_tests/images/whole-centroid-600-reference.png sont différents
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml	2013-06-01 19:23:20.417993774 +0200
+Les fichiers binaires mapnik-mapnik-ef297c6/tests/visual_tests/images/marker_line_placement_on_points-500-reference.png et mapnik-v2.1.x/tests/visual_tests/images/marker_line_placement_on_points-500-reference.png sont différents
+Les fichiers binaires mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-multi-policy-600-reference.png et mapnik-v2.1.x/tests/visual_tests/images/marker-multi-policy-600-reference.png sont différents
+Les fichiers binaires mapnik-mapnik-ef297c6/tests/visual_tests/images/marker-on-line-600-reference.png et mapnik-v2.1.x/tests/visual_tests/images/marker-on-line-600-reference.png sont différents
+Les fichiers binaires mapnik-mapnik-ef297c6/tests/visual_tests/images/whole-centroid-600-reference.png et mapnik-v2.1.x/tests/visual_tests/images/whole-centroid-600-reference.png sont différents
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml mapnik-v2.1.x/tests/visual_tests/styles/marker_line_placement_on_points.xml
+--- mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_placement_on_points.xml	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/styles/marker_line_placement_on_points.xml	2013-06-01 19:23:20.417993774 +0200
 @@ -0,0 +1,36 @@
 +<!DOCTYPE Map>
 +<Map background-color="white" srs="+init=epsg:4326" minimum-version="0.7.2">
@@ -5372,9 +5372,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker_line_pla
 +    </Layer>
 +</Map>
 \ Pas de fin de ligne à la fin du fichier
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml	2013-06-01 19:23:20.417993774 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml mapnik-v2.1.x/tests/visual_tests/styles/marker-multi-policy.xml
+--- mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-policy.xml	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/styles/marker-multi-policy.xml	2013-06-01 19:23:20.417993774 +0200
 @@ -0,0 +1,36 @@
 +<Map maximum-extent="0,0,190,180">
 +<Style name="each">
@@ -5412,9 +5412,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-multi-po
 +    </Datasource>
 +  </Layer>
 +</Map>
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml	2013-06-01 19:23:20.417993774 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml mapnik-v2.1.x/tests/visual_tests/styles/marker-on-line.xml
+--- mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.xml	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/styles/marker-on-line.xml	2013-06-01 19:23:20.417993774 +0200
 @@ -0,0 +1,21 @@
 +<Map>
 +<Style name="line" filter-mode="first" >
@@ -5437,9 +5437,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/marker-on-line.
 +    </Datasource>
 +  </Layer>
 +</Map>
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml	1970-01-01 01:00:00.000000000 +0100
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml	2013-06-01 19:23:20.421993703 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml mapnik-v2.1.x/tests/visual_tests/styles/whole-centroid.xml
+--- mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.xml	1970-01-01 01:00:00.000000000 +0100
++++ mapnik-v2.1.x/tests/visual_tests/styles/whole-centroid.xml	2013-06-01 19:23:20.421993703 +0200
 @@ -0,0 +1,21 @@
 +<Map maximum-extent="736908, 4390316, 2060771, 5942346">
 +<Style name="whole">
@@ -5462,9 +5462,9 @@ diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/styles/whole-centroid.
 +    </Datasource>
 +  </Layer>
 +</Map>
-diff -Nur v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/test.py upstream/mapnik-mapnik-ef297c6/tests/visual_tests/test.py
---- v2.1.0/mapnik-mapnik-ef297c6/tests/visual_tests/test.py	2012-08-23 23:52:53.000000000 +0200
-+++ upstream/mapnik-mapnik-ef297c6/tests/visual_tests/test.py	2013-06-01 19:23:20.421993703 +0200
+diff -Nur mapnik-mapnik-ef297c6/tests/visual_tests/test.py mapnik-v2.1.x/tests/visual_tests/test.py
+--- mapnik-mapnik-ef297c6/tests/visual_tests/test.py	2012-08-23 23:52:53.000000000 +0200
++++ mapnik-v2.1.x/tests/visual_tests/test.py	2013-06-01 19:23:20.421993703 +0200
 @@ -27,6 +27,14 @@
      {'name': "lines-2", 'sizes': sizes_few_square},
      {'name': "lines-3", 'sizes': sizes_few_square},

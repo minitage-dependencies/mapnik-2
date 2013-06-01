@@ -1,6 +1,6 @@
 diff -Nur ./1/mapnik-mapnik-91ad6fc/SConstruct ./3/mapnik-mapnik-91ad6fc/SConstruct
---- ./1/mapnik-mapnik-91ad6fc/SConstruct	2012-08-23 14:52:52.000000000 +0200
-+++ ./3/mapnik-mapnik-91ad6fc/SConstruct	2012-10-30 11:05:16.000000000 +0100
+--- mapnik-mapnik-91ad6fc/SConstruct	2012-08-23 14:52:52.000000000 +0200
++++ mapnik-mapnik-91ad6fc/SConstruct	2012-10-30 11:05:16.000000000 +0100
 @@ -657,6 +657,13 @@
      # does not remove 'lib' and 'include'
      prefixes.insert(0,os.path.dirname(os.path.normpath(env['BOOST_INCLUDES'])))
