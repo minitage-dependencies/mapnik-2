@@ -3278,17 +3278,17 @@ diff -Nur mapnik-mapnik-ef297c6/.git/logs/HEAD mapnik-v2.1.x/.git/logs/HEAD
 --- mapnik-mapnik-ef297c6/.git/logs/HEAD	1970-01-01 01:00:00.000000000 +0100
 +++ mapnik-v2.1.x/.git/logs/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
-+0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
++0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Makina Corpus <freesoftware@makina-corpus.com> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
 diff -Nur mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x mapnik-v2.1.x/.git/logs/refs/heads/2.1.x
 --- mapnik-mapnik-ef297c6/.git/logs/refs/heads/2.1.x	1970-01-01 01:00:00.000000000 +0100
 +++ mapnik-v2.1.x/.git/logs/refs/heads/2.1.x	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
-+0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
++0000000000000000000000000000000000000000 3e70226a69e32e2282e405b61d0d679fd96370aa Makina Corpus <freesoftware@makina-corpus.com> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
 diff -Nur mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD mapnik-v2.1.x/.git/logs/refs/remotes/origin/HEAD
 --- mapnik-mapnik-ef297c6/.git/logs/refs/remotes/origin/HEAD	1970-01-01 01:00:00.000000000 +0100
 +++ mapnik-v2.1.x/.git/logs/refs/remotes/origin/HEAD	2013-06-01 19:23:19.802004623 +0200
 @@ -0,0 +1 @@
-+0000000000000000000000000000000000000000 856ec4fd24128c61a0fc967b1cda6ab33a33db5c Mathieu Le Marec - Pasquet <kiorky@cryptelium.net> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
++0000000000000000000000000000000000000000 856ec4fd24128c61a0fc967b1cda6ab33a33db5c Makina Corpus <freesoftware@makina-corpus.com> 1370107399 +0200	clone: from git@github.com:mapnik/mapnik.git
 Les fichiers binaires mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx et mapnik-v2.1.x/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.idx sont différents
 Les fichiers binaires mapnik-mapnik-ef297c6/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack et mapnik-v2.1.x/.git/objects/pack/pack-05fe258e00ce90c8d15427af5ae64017abffff04.pack sont différents
 diff -Nur mapnik-mapnik-ef297c6/.git/packed-refs mapnik-v2.1.x/.git/packed-refs
